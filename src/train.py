@@ -11,7 +11,7 @@ model = BBCModel(vocab_size=len(vocab))
 cross_loss = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
-epochs = 10
+epochs = 20
 for epoch in range(epochs):
     model.train()
     total_loss = 0
