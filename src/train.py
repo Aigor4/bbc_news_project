@@ -1,4 +1,4 @@
-from model import BBCModel, BBCDataset, vocab, X_train, y_train, max_len
+from model import BBCModel, BBCDataset, vocab, X_train, y_train, max_len, names
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
@@ -25,6 +25,6 @@ for epoch in range(epochs):
     print(f"Epoch {epoch+1}, loss: {total_loss/len(train_loader):.4f}")
 
 torch.save(model.state_dict(), "../models/model.pt")
-data_to_save = {"vocab": vocab, "max_len": max_len}
+data_to_save = {"vocab": vocab, "max_len": max_len, "names": names}
 with open('../models/vocab.pkl', 'wb') as f:
     pkl.dump(data_to_save, f)
