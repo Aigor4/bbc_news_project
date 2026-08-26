@@ -2,7 +2,7 @@ from etl import load
 from collections import Counter
 import torch
 
-X_train, X_test, y_train, y_test = load("../data/bbc_data.csv")
+X_train, X_test, y_train, y_test, names = load("../data/bbc_data.csv")
 max_len = int(X_train.str.split().str.len().quantile(0.95))
 splited = X_train.str.split()
 
